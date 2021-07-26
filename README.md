@@ -7,6 +7,8 @@
 1) Clone repo -->  git clone git@github.com:Hithasee/angularjs_app_dell.git
 2) cd to folder and run npm install
 3) Change database settings- open server/config.js and do necessary changes
+
+     ```
      const pool = mysql.createPool({
       connectionLimit   :     100,
       host    :    "localhost",
@@ -15,8 +17,9 @@
       password:    "admin123",
       database:    "mydb",
       debug   :    false
-     });
-   Create Statement:
+     });```
+     
+     Create Statement:
 
     ```CREATE TABLE `mydb.calc_table` (
     `id` int NOT NULL AUTO_INCREMENT,
@@ -24,7 +27,8 @@
     `num2` int DEFAULT NULL,
     `result` int DEFAULT NULL,
     PRIMARY KEY (`id`)
-    ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;```
+    ) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+    ```
 
 Note: Make sure you are using Mysql database
 
