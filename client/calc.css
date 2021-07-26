@@ -1,0 +1,28 @@
+
+.jumbotron {
+  background-color:#0066cc;
+  color:white;
+}
+
+.jumbotron h1{
+
+  font-family: 'open sans', helvetica, arial, sans;
+  font-size: 35px;
+}
+.note {
+  background-color:#e6f3ff;
+}
+
+
+
+input.ng-invalid {
+  color: red;
+  font-weight: bold;
+}
+/*input.ng-valid {
+  background-color: lightgreen;
+}*/
+
+table {
+  white-space:break-spaces;
+}

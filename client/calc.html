@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" href="calc.css">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+
+<script src="calc.js"></script>
+
+<div class="jumbotron">
+  <h1>ANGULAJS PORTAL</h1>
+</div>
+
+<body ng-app="App" ng-controller="AppController" data-ng-init="init()">
+  <div class="row">
+
+    <div class="col-sm-offset-1 col-sm-5">
+      <form name="form" ng-submit="submitForm(form.$valid)" novalidate>
+        </br></br>
+
+
+        <div class="form-group">
+          <label>First Number:</label>
+          <input name="input1" type="text" ng-model="input1" ng-pattern="regex" required>
+         <!--<p ng-if="form.input1.$pristine">Required.</p>
+          <p ng-if="form.input1.$invalid"></p>-->
+        </div>
+        </br>
+        <div class="form-group">
+          <label>Second Number:</label>
+          <input name="input2" type="text" ng-model="input2" ng-pattern="regex" required>
+          <!--<p ng-if="form.input2.$pristine">Required.</p>
+          <p ng-if="form.input2.$invalid"></p>-->
+        </div>
+        </br>
+
+
+        <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Submit</button></br>
+        <div style="color: blue;font-family: sans-serif;font-size: 16px;" ng-if='form.$valid && submitted'> <span>Result: {{total() }}
+          </span> </div>
+        <div style="color: red;font-family: sans-serif;font-size: 15px;" ng-if='!submitSuccess'> <span> {{successMessage
+            }} </span> </div>
+
+
+
+        <div class="col-sm-5  col-sm-offset-1">
+          </br></br>
+          <div class="note">
+            <table class="table table-stripe">
+              <thead>
+                <tr>
+                  <th>First Number </th>
+                  <th>Second Number </th>
+                  <th> Result </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr ng-repeat="db in dblist">
+                  <td> {{ db.num1 }}</td>
+                  <td> {{ db.num2 }} </td>
+                  <td> {{ db.result }} </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
