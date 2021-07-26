@@ -17,11 +17,11 @@
       password:    "admin123",
       database:    "mydb",
       debug   :    false
-     });```
+     });
      
      Create Statement:
 
-    ```CREATE TABLE `mydb.calc_table` (
+    CREATE TABLE `mydb.calc_table` (
     `id` int NOT NULL AUTO_INCREMENT,
     `num1` int DEFAULT NULL,
     `num2` int DEFAULT NULL,
