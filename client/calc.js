@@ -5,6 +5,7 @@ app.controller("AppController", function ($scope, $http) {
   $scope.submitted = false;
   $scope.result = 0;
   $scope.input = {};
+  $scope.dblist  = {};
 
   $scope.submitForm = function (isValid) {
 
@@ -57,9 +58,12 @@ app.controller("AppController", function ($scope, $http) {
     $http.get('./app/getData')
       .then(function (response) {
         console.log("insode getdata", response);
-        var data = response.data.result.db_res;
         var statusCode = response.data.status_code;
         var statusMsg = response.data.status;
+
+        if(statusCode == 201) {
+        var data = response.data.result.db_res;
+      
 
 
 
@@ -69,7 +73,9 @@ app.controller("AppController", function ($scope, $http) {
 
 
         $scope.dblist = data;
-
+        }  else {
+          alert("Unable to connect to DB.");  
+        } 
       });
 
   }

@@ -24,14 +24,14 @@ var Task = {
                   if (!insErr) {
                     resolve({ db_res: insRes });
                   } else {
-                    resolve({ db_err: insErr });
+                    reject({ db_err: insErr });
                   }
                 });
               } else {
                   reject({ err_code: 'DATA_EXISTS', err: dbRes });
               }
             } else {
-              resolve({ db_err: dbErr });
+              reject({ db_err: dbErr });
             }
           });
     });
