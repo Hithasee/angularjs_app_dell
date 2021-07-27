@@ -21,7 +21,7 @@
      
      Create Statement:
 
-    CREATE TABLE `mydb.calc_table` (
+    CREATE TABLE `calc_table` (
     `id` int NOT NULL AUTO_INCREMENT,
     `num1` int DEFAULT NULL,
     `num2` int DEFAULT NULL,

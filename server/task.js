@@ -16,11 +16,11 @@ var Task = {
       var input1 = data.num1;
       var input2 = data.num2;
 
-          db_config.query('SELECT * FROM mydb.calc_table WHERE num1 = ? AND num2 = ? ;', [input1,input2], (dbErr, dbRes) => {
+          db_config.query('SELECT * FROM calc_table WHERE num1 = ? AND num2 = ? ;', [input1,input2], (dbErr, dbRes) => {
             if (!dbErr) {
               //console.log("dbRes length",dbRes.length);
               if (dbRes.length === 0) {	//Data not exists.
-                db_config.query('INSERT INTO mydb.calc_table SET ?;', data, (insErr, insRes) => {
+                db_config.query('INSERT INTO calc_table SET ?;', data, (insErr, insRes) => {
                   if (!insErr) {
                     resolve({ db_res: insRes });
                   } else {
@@ -42,7 +42,7 @@ var Task = {
       console.log("Inside task.js: getAllDataResults");
       console.log("\n\n");
 
-      db_config.query('SELECT * FROM mydb.calc_table;', (dbErr, dbRes) => {
+      db_config.query('SELECT * FROM calc_table;', (dbErr, dbRes) => {
         if (!dbErr) {
           resolve({ db_res: dbRes });
         } else {
